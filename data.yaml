@@ -1,0 +1,19 @@
+username: 
+    stadard:  
+      name: standard_user
+      password: secret_sauce
+    proble_name:  
+      name: problem_user
+      password: secret_sauce
+    perf:  
+      name: performance_glitch_user
+      password: secret_sauce
+
+
+your_Information:
+    first_name: Tawatchai
+    last_name: Boonping
+    zip_postal_code: 50120
+
+
+

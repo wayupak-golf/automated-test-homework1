@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.7 on win32)" generated="2024-10-11T17:46:42.805131" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Cast" source="D:\Programing\Automate_Test\Homework1\test_cast.robot">
+<test id="s1-t1" name="Open Browser chrome" line="7">
+<kw name="Open Browser chrome" owner="import">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:43.277786" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-11T17:46:43.277786" elapsed="3.798897"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2024-10-11T17:46:43.276084" elapsed="3.801736"/>
+</kw>
+<kw name="Input username" owner="import">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:47.077820" level="INFO">Typing text 'standard_user' into text field '//*[@id="user-name"]'.</msg>
+<arg>//*[@id="user-name"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:47.077820" elapsed="0.226257"/>
+</kw>
+<arg>${username.stadard.name}</arg>
+<status status="PASS" start="2024-10-11T17:46:47.077820" elapsed="0.226257"/>
+</kw>
+<kw name="Input Password" owner="import">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:47.304077" level="INFO">Typing text 'secret_sauce' into text field '//*[@id="password"]'.</msg>
+<arg>//*[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:47.304077" elapsed="0.217033"/>
+</kw>
+<arg>${username.stadard.password}</arg>
+<status status="PASS" start="2024-10-11T17:46:47.304077" elapsed="0.217033"/>
+</kw>
+<kw name="click login" owner="import">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:47.521110" level="INFO">Clicking button '//*[@id="login-button"]'.</msg>
+<arg>//*[@id="login-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:47.521110" elapsed="1.220978"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:47.521110" elapsed="1.220978"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:43.275509" elapsed="5.466579"/>
+</test>
+<test id="s1-t2" name="Add Item To Cart" line="12">
+<kw name="click Add To cart" owner="import">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:48.742088" level="INFO">Clicking button '//*[@id="inventory_container"]/div/div[4]/div[3]/button'.</msg>
+<arg>//*[@id="inventory_container"]/div/div[4]/div[3]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:48.742088" elapsed="0.140736"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:48.742088" elapsed="0.140736"/>
+</kw>
+<kw name="Check order cart" owner="import">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:48.882824" level="INFO">Clicking element '//*[@id="shopping_cart_container"]'.</msg>
+<arg>//*[@id="shopping_cart_container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:48.882824" elapsed="0.426110"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:48.882824" elapsed="0.426699"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:48.742088" elapsed="0.567435"/>
+</test>
+<test id="s1-t3" name="Verify Text In Cart" line="15">
+<kw name="Verify Product In Cart" owner="import">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="cart_contents_container"]/div/div[1]/div[3]/div[2]/div[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.312780" elapsed="0.049812"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:49.312244" elapsed="0.050904"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:49.311241" elapsed="0.051907"/>
+</test>
+<test id="s1-t4" name="Verify Product Name" line="17">
+<kw name="Verify Product Name In Cart" owner="import">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-11T17:46:49.365313" level="INFO">${CSV_FILE} = product.csv</msg>
+<var>${CSV_FILE}</var>
+<arg>product.csv</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.365313" elapsed="0.000000"/>
+</kw>
+<kw name="Read Csv File To Associative" owner="CSVLibrary">
+<msg time="2024-10-11T17:46:49.367105" level="INFO">${DATA_CSV} = [{'ï»¿On': '1', 'Product': 'Sauce Labs Fleece Jacket', 'Details': '"It\'s not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day ou...</msg>
+<var>${DATA_CSV}</var>
+<arg>${CSV_FILE}</arg>
+<doc>Read CSV file and return its content as a Python list of dictionaries.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.365841" elapsed="0.001264"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-10-11T17:46:49.367613" level="INFO">${products_from_csv} = {'ï»¿On': '2', 'Product': 'Sauce Labs Bike Light', 'Details': '"This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringsp...</msg>
+<var>${products_from_csv}</var>
+<arg>${DATA_CSV}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.367613" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-10-11T17:46:49.369343" level="INFO">${csv_product_name} = Sauce Labs Fleece Jacket</msg>
+<var>${csv_product_name}</var>
+<arg>${row}</arg>
+<arg>Product</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.368835" elapsed="0.000686"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:49.405621" level="INFO">${product_from_web} = Sauce Labs Fleece Jacket</msg>
+<var>${product_from_web}</var>
+<arg>//*[@class="inventory_item_name"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.369521" elapsed="0.036100"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${product_from_web}</arg>
+<arg>${csv_product_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.406127" elapsed="0.000526"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2024-10-11T17:46:49.407731" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.407186" elapsed="0.000545"/>
+</kw>
+<arg>'${product_from_web}' == '${csv_product_name}'</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.406653" elapsed="0.001078"/>
+</kw>
+<var name="${row}">{'ï»¿On': '1', 'Product': 'Sauce Labs Fleece Jacket', 'Details': '"It\'s not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day out...</var>
+<status status="PASS" start="2024-10-11T17:46:49.368688" elapsed="0.039043"/>
+</iter>
+<var>${row}</var>
+<value>@{DATA_CSV}</value>
+<status status="PASS" start="2024-10-11T17:46:49.368152" elapsed="0.039579"/>
+</for>
+<status status="PASS" start="2024-10-11T17:46:49.364777" elapsed="0.043482"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:49.364239" elapsed="0.044020"/>
+</test>
+<test id="s1-t5" name="Verify Product Price" line="19">
+<kw name="Verify Product Price In Cart" owner="import">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-11T17:46:49.410970" level="INFO">${CSV_FILE} = product.csv</msg>
+<var>${CSV_FILE}</var>
+<arg>product.csv</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.410425" elapsed="0.000545"/>
+</kw>
+<kw name="Read Csv File To Associative" owner="CSVLibrary">
+<msg time="2024-10-11T17:46:49.412039" level="INFO">${DATA_CSV} = [{'ï»¿On': '1', 'Product': 'Sauce Labs Fleece Jacket', 'Details': '"It\'s not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day ou...</msg>
+<var>${DATA_CSV}</var>
+<arg>${CSV_FILE}</arg>
+<doc>Read CSV file and return its content as a Python list of dictionaries.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.410970" elapsed="0.001069"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-10-11T17:46:49.412039" level="INFO">${price_from_csv} = {'ï»¿On': '2', 'Product': 'Sauce Labs Bike Light', 'Details': '"This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringsp...</msg>
+<var>${price_from_csv}</var>
+<arg>${DATA_CSV}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.412039" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-11T17:46:49.413157" level="INFO">${csv_price} = 49.99 </msg>
+<var>${csv_price}</var>
+<arg>${price_from_csv['Price']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.412559" elapsed="0.000598"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-11T17:46:49.413669" level="INFO">${csv_price} = 49.99</msg>
+<var>${csv_price}</var>
+<arg>${csv_price}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.413157" elapsed="0.000512"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:49.439042" level="INFO">${price_from_web} = 49.99</msg>
+<var>${price_from_web}</var>
+<arg>//*[@class="inventory_item_price"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.413669" elapsed="0.025373"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${price_from_web}</arg>
+<arg>${csv_price}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.439042" elapsed="0.000517"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2024-10-11T17:46:49.439559" level="INFO">Exiting for loop altogether.</msg>
+<arg>${price_from_web} == ${csv_price}</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.439559" elapsed="0.000000"/>
+</kw>
+<var name="${price_from_csv}">{'ï»¿On': '1', 'Product': 'Sauce Labs Fleece Jacket', 'Details': '"It\'s not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day out...</var>
+<status status="PASS" start="2024-10-11T17:46:49.412559" elapsed="0.027000"/>
+</iter>
+<var>${price_from_csv}</var>
+<value>@{DATA_CSV}</value>
+<status status="PASS" start="2024-10-11T17:46:49.412559" elapsed="0.027000"/>
+</for>
+<status status="PASS" start="2024-10-11T17:46:49.409884" elapsed="0.029675"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:49.409335" elapsed="0.030224"/>
+</test>
+<test id="s1-t6" name="Checkout &amp; Input Information" line="21">
+<kw name="Checkout" owner="import">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:49.442562" level="INFO">Clicking element '//*[@id="cart_contents_container"]/div/div[2]/a[2]'.</msg>
+<arg>//*[@id="cart_contents_container"]/div/div[2]/a[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.442562" elapsed="0.476129"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:49.442562" elapsed="0.477024"/>
+</kw>
+<kw name="Input First Name" owner="import">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:49.920566" level="INFO">Typing text 'Tawatchai' into text field '//*[@id="first-name"]'.</msg>
+<arg>//*[@id="first-name"]</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:49.920566" elapsed="0.247466"/>
+</kw>
+<arg>${your_Information.first_name}</arg>
+<status status="PASS" start="2024-10-11T17:46:49.920566" elapsed="0.247466"/>
+</kw>
+<kw name="Input Last Name" owner="import">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:50.168032" level="INFO">Typing text 'Boonping' into text field '//*[@id="last-name"]'.</msg>
+<arg>//*[@id="last-name"]</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:50.168032" elapsed="0.237383"/>
+</kw>
+<arg>${your_Information.last_name}</arg>
+<status status="PASS" start="2024-10-11T17:46:50.168032" elapsed="0.237982"/>
+</kw>
+<kw name="Input Zip Code" owner="import">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:50.406014" level="INFO">Typing text '50120' into text field '//*[@id="postal-code"]'.</msg>
+<arg>//*[@id="postal-code"]</arg>
+<arg>${zip_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:50.406014" elapsed="0.227937"/>
+</kw>
+<arg>${your_Information.zip_postal_code}</arg>
+<status status="PASS" start="2024-10-11T17:46:50.406014" elapsed="0.227937"/>
+</kw>
+<kw name="click Continue" owner="import">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:50.633951" level="INFO">Clicking button '//*[@id="checkout_info_container"]/div/form/div[2]/input'.</msg>
+<arg>//*[@id="checkout_info_container"]/div/form/div[2]/input</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:50.633951" elapsed="0.530145"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:50.633951" elapsed="0.530145"/>
+</kw>
+<kw name="click Finish" owner="import">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-11T17:46:51.166797" level="INFO">Clicking element '//*[@id="checkout_summary_container"]/div/div[2]/div[8]/a[2]'.</msg>
+<arg>//*[@id="checkout_summary_container"]/div/div[2]/div[8]/a[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-11T17:46:51.166514" elapsed="0.745348"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:51.164096" elapsed="0.747766"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:49.441789" elapsed="2.470073"/>
+</test>
+<test id="s1-t7" name="Verify Order Success" line="28">
+<kw name="Verify Order Success" owner="import">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="checkout_complete_container"]/h2</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-11T17:46:51.916793" elapsed="0.066468"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:51.916793" elapsed="0.066468"/>
+</kw>
+<status status="PASS" start="2024-10-11T17:46:51.916534" elapsed="0.066727"/>
+</test>
+<status status="PASS" start="2024-10-11T17:46:42.805131" elapsed="9.183650"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Test Cast">Test Cast</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
